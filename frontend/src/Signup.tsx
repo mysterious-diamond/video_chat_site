@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-function Signin() {
+function SignUp() {
     return (
         <div>
             <div className='link-bar'>
@@ -11,17 +11,18 @@ function Signin() {
                 </nav>
             </div >
 
-            <div className="signin-form-div">
-                <h1>Sign in to start calling!</h1>
-                <form className="signin-form">
+            <div className="signup-form-div">
+                <h1>make accoutn for vidoe chat</h1>
+                <form className="signup-form">
                     <p>Username : <span><input type="text"></input></span></p>
+                    <p>Nickname (optional) : <span><input type='text' /></span></p>
                     <p>Password : <span><input type="password"></input></span></p>
 
-                    <button type="submit">Sign In</button>
+                    <button type="submit">Sign Up</button>
                 </form>
             </div>
         </div>
-    )
+    );
 }
 
-export default Signin;
+export default SignUp;
