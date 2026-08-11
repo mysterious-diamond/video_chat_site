@@ -1,15 +1,9 @@
-import { Link } from 'react-router-dom';
+import Linkbar from './linkbar';
 
 function SignUp() {
     return (
         <div>
-            <div className='link-bar'>
-                <p>aaron vidoe chat</p>
-                <nav>
-                    <Link to="/signin" className="home-links">Sign In</Link>
-                    <Link to="/signup" className="home-links">Sign Up</Link>
-                </nav>
-            </div >
+            <Linkbar />
 
             <div className="signup-form-div">
                 <h1>make accoutn for vidoe chat</h1>
