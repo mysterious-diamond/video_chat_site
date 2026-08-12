@@ -14,8 +14,8 @@ body {
 }
 
 h1 {
-    margin-left: -1%;
-    font-size: clamp(1.5rem, 6vw, 10rem);
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+    margin-left: 1.5%;
 }
 
 p {
@@ -52,9 +52,14 @@ nav {
     align-items: center;
 
     width: 20%;
-    gap: 20px;
-    padding-right: 5%;
-    margin-right: 5vw;
+    gap: 5vw;
+    padding-right: 0;
+    margin-right: clamp(1rem, 9vw, 2.75rem);
+}
+
+div {
+    display: grid;
+    justify-content: column;
 }
 
 .home-links {
@@ -73,7 +78,7 @@ nav {
     padding: 1%;
     padding-top: 2%;
     padding-left: 2%;
-    margin-top: 6%;
+    margin-top: -1%;
     outline: 2px dashed black;
 }
 
@@ -85,8 +90,9 @@ nav {
     align-items: center;
 
     width: 100vw;
-    height: 90vh;
-    margin-top: -7%;
+    height: 80vh;
+    top: 10vh;
+    margin-top: 8%;
 }
 
 .signin-form,
@@ -96,5 +102,11 @@ nav {
 
     width: 100%;
     height: 25%;
-    margin-left: 10vw;
+    margin-left: 10%;
+}
+
+.home-text {
+    margin-top: 45vh;
+    margin-left: 23vw;
+    font-size: 4vw;
 }

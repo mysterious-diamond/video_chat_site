@@ -1,14 +1,11 @@
-import { Link } from "react-router-dom";
+import Linkbar from "./linkbar";
 
 function Home() {
     return (
-        <div className='link-bar'>
-            <p>aaron vidoe chat</p>
-            <nav>
-                <Link to="/signin" className="home-links">Sign In</Link>
-                <Link to="/signup" className="home-links">Sign Up</Link>
-            </nav>
-        </div >
+        <div>
+            <Linkbar />
+            <h1 className="home-text">Sign up now or login to start</h1>
+        </div>
     );
 }
 
