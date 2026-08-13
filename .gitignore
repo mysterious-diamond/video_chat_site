@@ -14,3 +14,6 @@ frontend/*.local
 
 # Editor directories and files
 *.sw?
+
+backend/target
+backend/.factorypath
