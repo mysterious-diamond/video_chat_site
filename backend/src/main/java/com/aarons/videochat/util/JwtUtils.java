@@ -1,4 +1,4 @@
-package com.aarons.videochat.utils;
+package com.aarons.videochat.util;
 
 import java.security.Key;
 import java.security.SecureRandom;

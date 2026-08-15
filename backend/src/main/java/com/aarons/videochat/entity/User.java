@@ -1,5 +1,7 @@
 package com.aarons.videochat.entity;
 
+import org.apache.coyote.BadRequestException;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -23,9 +25,18 @@ public class User {
     }
 
     public User(String name, String nickname, String password) {
+        if (name == null || name.isEmpty()) {
+            throw new BadRequestException("User name field is empty");
+        } else if (password == null || name.isEmpty()) {
+            throw new BadRequestException("User password field is empty");
+        } else if (name.length() <= 4) {
+            throw new BadRequestException("User name have more than 4 characters");
+        }
+
         this.name = name;
         this.nickname = nickname;
         this.password = password;
+
     }
 
     public Long getId() {
