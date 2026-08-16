@@ -1,6 +1,6 @@
 package com.aarons.videochat.entity;
 
-import org.apache.coyote.BadRequestException;
+import com.aarons.videochat.error.BadRequestException;
 
 import jakarta.persistence.*;
 

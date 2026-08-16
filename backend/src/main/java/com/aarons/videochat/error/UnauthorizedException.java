@@ -1,15 +1,15 @@
 package com.aarons.videochat.error;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.http.HttpStatus;
 
 @ResponseStatus(HttpStatus.BAD_REQUEST)
-public class BadRequestException extends RuntimeException {
+public class UnauthorizedException extends RuntimeException {
     private final HttpStatus statusCode;
 
-    public BadRequestException(String message) {
+    public UnauthorizedException(String message) {
         super(message);
-        this.statusCode = HttpStatus.BAD_REQUEST;
+        this.statusCode = HttpStatus.UNAUTHORIZED;
     }
 
     public HttpStatus getStatusCode() {
