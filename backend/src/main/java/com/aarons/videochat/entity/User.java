@@ -1,5 +1,7 @@
 package com.aarons.videochat.entity;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import com.aarons.videochat.error.BadRequestException;
 
 import jakarta.persistence.*;
@@ -21,10 +23,13 @@ public class User {
     @Column(nullable = false)
     private String password;
 
+    @Transient
+    private PasswordEncoder passwordEncoder;
+
     public User() {
     }
 
-    public User(String name, String nickname, String password) {
+    public User(PasswordEncoder passwordEncoder, String name, String nickname, String password) {
         if (name == null || name.isEmpty()) {
             throw new BadRequestException("User name field is empty");
         } else if (password == null || name.isEmpty()) {
@@ -33,10 +38,11 @@ public class User {
             throw new BadRequestException("User name have more than 4 characters");
         }
 
+        this.passwordEncoder = passwordEncoder;
+
         this.name = name;
         this.nickname = nickname;
-        this.password = password;
-
+        this.password = hashPassword(password);
     }
 
     public Long getId() {
@@ -55,4 +61,7 @@ public class User {
         return this.password.equals(password);
     }
 
+    private String hashPassword(String password) {
+        return this.passwordEncoder.encode(password);
+    }
 }
