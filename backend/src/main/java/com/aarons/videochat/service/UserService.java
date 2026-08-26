@@ -13,9 +13,9 @@ public class UserService {
     private final UserRepository userRepository;
     private final JwtUtils jwtUtils;
 
-    public UserService(UserRepository userRepository, JwtUtils jwtUtils) {
+    public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
-        this.jwtUtils = jwtUtils;
+        this.jwtUtils = new JwtUtils();
     }
 
     public String validateUserAndGetJwtToken(String name, String password) {

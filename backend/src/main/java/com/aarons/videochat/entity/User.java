@@ -1,12 +1,17 @@
 package com.aarons.videochat.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import com.aarons.videochat.error.BadRequestException;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Entity
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "users")
 public class User {
 
@@ -26,9 +31,7 @@ public class User {
     @Transient
     private PasswordEncoder passwordEncoder;
 
-    public User() {
-    }
-
+    @Autowired
     public User(PasswordEncoder passwordEncoder, String name, String nickname, String password) {
         if (name == null || name.isEmpty()) {
             throw new BadRequestException("User name field is empty");
