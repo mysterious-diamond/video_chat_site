@@ -1,5 +1,4 @@
 import { userApi } from '../../api/user';
-import { storeJwtToken } from '../../utils/jwtToken';
 import Linkbar from '../linkbar';
 
 function SignIn() {
@@ -7,8 +6,7 @@ function SignIn() {
         const name = formData.get("name") as string;
         const password = formData.get("password") as string;
 
-        const token = await userApi.signin(name, password);
-        storeJwtToken(token);
+        await userApi.signin(name, password);
     }
 
     return (

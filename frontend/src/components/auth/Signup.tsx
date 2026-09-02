@@ -1,6 +1,5 @@
 import Linkbar from '../linkbar';
-import { userApi } from '../../api/user';
-import { storeJwtToken } from '../../utils/jwtToken';
+import { userApi } from '../../api/user'
 
 function SignUp() {
     const handleSubmit = async (formData: FormData) => {
@@ -8,8 +7,7 @@ function SignUp() {
         const nickname = formData.get("nickname") as string;
         const password = formData.get("password") as string;
 
-        const jwtToken = await userApi.signup(name, nickname, password);
-        storeJwtToken(jwtToken);
+        await userApi.signup(name, nickname, password);
     }
 
     return (
