@@ -16,10 +16,10 @@ public class UserService {
     private final JwtUtils jwtUtils;
     private final PasswordEncoder passwordEncoder;
 
-    public UserService(PasswordEncoder passwordEncoder, UserRepository userRepository) {
+    public UserService(PasswordEncoder passwordEncoder, UserRepository userRepository, JwtUtils jwtUtils) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-        this.jwtUtils = new JwtUtils();
+        this.jwtUtils = jwtUtils;
     }
 
     public String validateUserAndGetJwtToken(String name, String password) {
@@ -61,8 +61,7 @@ public class UserService {
     }
 
     private String generateJwtToken(User user) {
-        String nameToBeReturned = (user.getNickname() == null) ? user.getName() : user.getNickname();
-        String jwtToken = jwtUtils.generateJwtToken(user.getId(), nameToBeReturned);
+        String jwtToken = jwtUtils.generateToken(user.getId());
         return jwtToken;
     }
 }

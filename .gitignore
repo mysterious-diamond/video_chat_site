@@ -17,6 +17,7 @@ backend/.factorypath
 backend/.classpath
 backend/.project
 backend/HELP.md
+backend/src/main/resources/.env
 
 # Editor directories and files
 *.sw?
