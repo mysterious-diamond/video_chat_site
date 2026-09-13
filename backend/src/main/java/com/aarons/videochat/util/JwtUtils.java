@@ -26,7 +26,7 @@ public class JwtUtils {
         return Keys.hmacShaKeyFor(SECRET_STRING.getBytes(StandardCharsets.UTF_8));
     }
 
-    public JwtUtils(@Value("${JWT_KEY}") String jwtKey) {
+    public JwtUtils(@Value("${jwt.secret}") String jwtKey) {
         this.SECRET_STRING = jwtKey;
     }
 
